@@ -1,0 +1,50 @@
+Plan:
+
+- Step 1:
+* sub-task: Initial data exploration and understanding of the NOBIL dataset
+* agent: data_understanding_agent
+* bullet points:
+  - Load sample historical dump data from /root/data/nobil-realtime_datadump/
+  - Inspect schema, key fields, data types, and missing values
+  - Provide summary statistics and initial insights on station counts, session counts, time coverage
+
+- Step 2:
+* sub-task: Data cleaning, missing value analysis, and transformation
+* agent: data_preparation_agent
+* bullet points:
+  - Clean and filter out incomplete or inconsistent records
+  - Analyze the frequency, distribution, and context of the 'UNKNOWN' status as missing data
+  - Decide on treatment for 'UNKNOWN' status based on missing value analysis
+  - Construct session-level records with start time, end time, duration, station and EVSE identifiers
+  - Build occupancy time series per station and per EVSE at an hourly granularity
+
+- Step 3:
+* sub-task: Business clarifications on occupancy definitions
+* agent: business_understanding_agent
+* bullet points:
+  - Clarify with client how to treat 'UNKNOWN' status in occupancy metrics
+  - Clarify whether non-operational statuses (e.g., 'OUTOFORDER') should be excluded from occupancy denominator
+
+- Step 4:
+* sub-task: Computation of refined metrics
+* agent: modeling_agent
+* bullet points:
+  - Recompute utilization trends: daily and hourly occupancy rates, using refined denominator (charging_count / (charging_count + available_count)) and handling UNKNOWN as per business decision
+  - Identify peak demand periods hourly by measuring occupancy levels per station
+  - Assess capacity pressure: compute station pressure using EVSE-level binary occupancy flags and count hours where ≥ 90% EVSEs occupied
+  - Determine reliability/downtime: separate OUTOFORDER status-based downtime and genuine idle gaps > 24 hours per EVSE
+
+- Step 5:
+* sub-task: Evaluation of metrics against requirements
+* agent: evaluation_agent
+* bullet points:
+  - Verify that refined metrics adhere to client definitions and thresholds
+  - Perform sanity checks and validate results consistency
+
+- Step 6:
+* sub-task: Deployment of artefacts
+* agent: deployment_agent
+* bullet points:
+  - Assemble all updated Python scripts into /root/output/scripts
+  - Save refined metric outputs into /root/output/outputs
+  - Update the markdown report at /root/output/report.md detailing design decisions, methodology, refinements, and findings

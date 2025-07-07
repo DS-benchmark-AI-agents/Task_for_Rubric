@@ -1,0 +1,40 @@
+# Data Preparation Report
+
+Date: 2025-07-04
+Agent: data_preparation_agent
+
+## 1. Objectives
+- Clean and transform raw NOBIL Avro snapshot data into a usable format for modeling.
+- Analyze missing values, specifically the handling of the 'UNKNOWN' status.
+- Build an hourly occupancy time series per station and per EVSE.
+
+## 2. Data Cleaning & Missing Value Analysis
+- Processed a development sample of 50 Avro files (114,660 records).
+- Parsed key fields: `nobilId` (station_id), `evseUId` (evse_id), `status`, and `timestamp`.
+- Dropped records with null station, evse, status, or timestamp.
+- Converted `timestamp` to UTC datetime.
+- Status distribution (sample):
+  - UNKNOWN: 12,239 / 114,660 (10.67%)
+- Decision: Excluded `UNKNOWN` status from occupancy metrics due to ambiguity regarding availability.
+
+## 3. Occupancy Time Series Construction
+- For remaining records, floored timestamps to hourly windows.
+- Aggregated counts by `station_id`, `hour`, and `status`.
+- Computed per-hour occupancy rate: `charging` count / `total` messages.
+- Repeated aggregation at EVSE (charging point) level.
+- Output files:
+  - `/root/output/data/status_summary.csv`: overall status counts.
+  - `/root/output/data/occupancy_station_hourly.parquet`
+  - `/root/output/data/occupancy_evse_hourly.parquet`
+  - `/root/output/data/flattened_sample.parquet`: cleaned raw records.
+  - `/root/output/data/unknown_analysis.txt`: missing value analysis details.
+
+## 4. Scalability & Next Steps
+- The Python script in `/root/output/code/data_prep/data_prep.py` can process larger data by adjusting `--sample_size` or removing sampling.
+- For full ingestion, run without sampling or in parallel via chunked Avro readers.
+- Next: hand-off to modeling_agent to compute utilization trends, peak demand, capacity pressure, and reliability metrics using these time series.
+
+## 5. Code Availability
+- Data preparation script: `/root/output/code/data_prep/data_prep.py`
+
+*End of report.*

@@ -1,0 +1,43 @@
+Plan:
+
+- Step 1:
+* sub-task: Initial data exploration and understanding of the NOBIL dataset
+* agent: data_understanding_agent
+* bullet points:
+  - Load sample historical dump data from /root/data/nobil-realtime_datadump/
+  - Inspect schema, key fields, data types, and missing values
+  - Provide summary statistics and initial insights on station counts, session counts, time coverage
+
+- Step 2:
+* sub-task: Data cleaning, missing value analysis, and transformation
+* agent: data_preparation_agent
+* bullet points:
+  - Clean and filter out incomplete or inconsistent records
+  - Analyze the frequency, distribution, and context of the 'UNKNOWN' status as missing data
+  - Decide on treatment for 'UNKNOWN' status (e.g., exclude from utilization metrics or count as unavailable) based on missing value analysis
+  - Construct session-level records with start time, end time, duration, station and EVSE identifiers
+  - Build occupancy time series per station and per EVSE at an hourly granularity
+
+- Step 3:
+* sub-task: Computation of required metrics
+* agent: modeling_agent
+* bullet points:
+  - Calculate utilization trends: daily session counts and occupancy rates (fraction of time occupied)
+  - Identify peak demand periods hourly by measuring occupancy levels per station
+  - Assess capacity pressure: compute hours per station where occupancy ≥ 90% of available EVSEs
+  - Determine reliability/downtime: detect continuous gaps > 24 hours with zero usage per EVSE
+
+- Step 4:
+* sub-task: Evaluation of metrics against requirements
+* agent: evaluation_agent
+* bullet points:
+  - Verify that calculated metrics adhere to client definitions and thresholds
+  - Perform sanity checks and validate results consistency
+
+- Step 5:
+* sub-task: Deployment of artefacts
+* agent: deployment_agent
+* bullet points:
+  - Assemble all Python scripts into /root/output/scripts
+  - Save metric outputs (figures, tables) into /root/output/outputs
+  - Write a markdown report at /root/output/report.md detailing design decisions, methodology, and findings

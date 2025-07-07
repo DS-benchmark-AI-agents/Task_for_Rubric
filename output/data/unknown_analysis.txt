@@ -1,0 +1,4 @@
+Total records: 114660
+UNKNOWN count: 12239
+UNKNOWN percentage: 10.67%
+Decision: Excluded 'UNKNOWN' status from occupancy metrics.

@@ -1,0 +1,79 @@
+/root/output/code/data_understanding/explore_avro.py:22: DeprecationWarning: The 'schema' attribute is deprecated. Please use 'writer_schema'
+  schema = avro_reader.schema
+Found 5 Avro files for sampling.
+
+Inspecting Avro file: /root/data/nobil-realtime_datadump/2024/06/16/10/27/45.avro
+Schema fields:
+  - SequenceNumber: long
+  - Offset: string
+  - EnqueuedTimeUtc: string
+  - SystemProperties: {'type': 'map', 'values': ['long', 'double', 'string', 'bytes']}
+  - Properties: {'type': 'map', 'values': ['long', 'double', 'string', 'bytes', 'null']}
+  - Body: ['null', 'bytes']
+Sample records:
+{'SequenceNumber': 0, 'Offset': '0', 'EnqueuedTimeUtc': '6/16/2024 10:28:22 AM', 'SystemProperties': {'x-opt-enqueued-time': 1718533702462}, 'Properties': {}, 'Body': b'{"nobilId": "NOR_13790", "evseUId": "384", "status": "OUTOFORDER", "timestamp": "2024-06-16T10:28:13.964476+00:00", "process_id": "7a249b1a-c994-4007-a9dc-f53774ccef6c"}'}
+{'SequenceNumber': 1, 'Offset': '224', 'EnqueuedTimeUtc': '6/16/2024 10:28:22 AM', 'SystemProperties': {'x-opt-enqueued-time': 1718533702462}, 'Properties': {}, 'Body': b'{"nobilId": "SWE_20941", "evseUId": "3ac0c4f5-db36-41da-a599-310a1487d1db", "status": "OUTOFORDER", "timestamp": "2024-06-16T10:28:18.966261+00:00", "process_id": "7a249b1a-c994-4007-a9dc-f53774ccef6c"}'}
+{'SequenceNumber': 2, 'Offset': '480', 'EnqueuedTimeUtc': '6/16/2024 10:28:22 AM', 'SystemProperties': {'x-opt-enqueued-time': 1718533702462}, 'Properties': {}, 'Body': b'{"nobilId": "SWE_20941", "evseUId": "010f8d99-ac50-492b-bf43-9f8d6446f5ff", "status": "OUTOFORDER", "timestamp": "2024-06-16T10:28:18.966387+00:00", "process_id": "7a249b1a-c994-4007-a9dc-f53774ccef6c"}'}
+{'SequenceNumber': 3, 'Offset': '736', 'EnqueuedTimeUtc': '6/16/2024 10:28:22 AM', 'SystemProperties': {'x-opt-enqueued-time': 1718533702462}, 'Properties': {}, 'Body': b'{"nobilId": "SWE_14795", "evseUId": "e20619d6-4dd2-40ca-8ce1-f918db38139e", "status": "OUTOFORDER", "timestamp": "2024-06-16T10:28:18.966470+00:00", "process_id": "7a249b1a-c994-4007-a9dc-f53774ccef6c"}'}
+{'SequenceNumber': 4, 'Offset': '992', 'EnqueuedTimeUtc': '6/16/2024 10:28:22 AM', 'SystemProperties': {'x-opt-enqueued-time': 1718533702462}, 'Properties': {}, 'Body': b'{"nobilId": "SWE_27863", "evseUId": "8ef96dbb94c4d346e84edad2d31ec79c", "status": "CHARGING", "timestamp": "2024-06-16T10:28:18.966545+00:00", "process_id": "7a249b1a-c994-4007-a9dc-f53774ccef6c"}'}
+------------------------------------------------------------
+Inspecting Avro file: /root/data/nobil-realtime_datadump/2024/06/16/10/42/45.avro
+Schema fields:
+  - SequenceNumber: long
+  - Offset: string
+  - EnqueuedTimeUtc: string
+  - SystemProperties: {'type': 'map', 'values': ['long', 'double', 'string', 'bytes']}
+  - Properties: {'type': 'map', 'values': ['long', 'double', 'string', 'bytes', 'null']}
+  - Body: ['null', 'bytes']
+Sample records:
+{'SequenceNumber': 3224, 'Offset': '780584', 'EnqueuedTimeUtc': '6/16/2024 10:42:46 AM', 'SystemProperties': {'x-opt-enqueued-time': 1718534566008}, 'Properties': {}, 'Body': b'{"nobilId": "SWE_27873", "evseUId": "68d6f4d2-4323-4a4a-d684-08dc650a3227", "status": "CHARGING", "timestamp": "2024-06-16T10:42:43.299348+00:00", "process_id": "6222ad62-75e2-4792-8264-d9930ab59de4"}'}
+{'SequenceNumber': 3225, 'Offset': '780848', 'EnqueuedTimeUtc': '6/16/2024 10:42:46 AM', 'SystemProperties': {'x-opt-enqueued-time': 1718534566008}, 'Properties': {}, 'Body': b'{"nobilId": "FIN_11940", "evseUId": "9867", "status": "OUTOFORDER", "timestamp": "2024-06-16T10:42:43.476608+00:00", "process_id": "6222ad62-75e2-4792-8264-d9930ab59de4"}'}
+{'SequenceNumber': 3226, 'Offset': '781080', 'EnqueuedTimeUtc': '6/16/2024 10:42:46 AM', 'SystemProperties': {'x-opt-enqueued-time': 1718534566008}, 'Properties': {}, 'Body': b'{"nobilId": "SWE_14379", "evseUId": "b8838036-0963-41f6-a542-6f08f7931f4f", "status": "AVAILABLE", "timestamp": "2024-06-16T10:42:43.590684+00:00", "process_id": "6222ad62-75e2-4792-8264-d9930ab59de4"}'}
+{'SequenceNumber': 3227, 'Offset': '781344', 'EnqueuedTimeUtc': '6/16/2024 10:42:46 AM', 'SystemProperties': {'x-opt-enqueued-time': 1718534566008}, 'Properties': {}, 'Body': b'{"nobilId": "NOR_17902", "evseUId": "8510", "status": "AVAILABLE", "timestamp": "2024-06-16T10:42:43.833037+00:00", "process_id": "6222ad62-75e2-4792-8264-d9930ab59de4"}'}
+{'SequenceNumber': 3228, 'Offset': '781576', 'EnqueuedTimeUtc': '6/16/2024 10:42:46 AM', 'SystemProperties': {'x-opt-enqueued-time': 1718534566008}, 'Properties': {}, 'Body': b'{"nobilId": "NOR_09434", "evseUId": "1A4964B8-8317-EC11-B6E6-6045BD87A3E8", "status": "AVAILABLE", "timestamp": "2024-06-16T10:42:44.163968+00:00", "process_id": "6222ad62-75e2-4792-8264-d9930ab59de4"}'}
+------------------------------------------------------------
+Inspecting Avro file: /root/data/nobil-realtime_datadump/2024/06/16/10/57/45.avro
+Schema fields:
+  - SequenceNumber: long
+  - Offset: string
+  - EnqueuedTimeUtc: string
+  - SystemProperties: {'type': 'map', 'values': ['long', 'double', 'string', 'bytes']}
+  - Properties: {'type': 'map', 'values': ['long', 'double', 'string', 'bytes', 'null']}
+  - Body: ['null', 'bytes']
+Sample records:
+{'SequenceNumber': 6325, 'Offset': '1530240', 'EnqueuedTimeUtc': '6/16/2024 10:57:46 AM', 'SystemProperties': {'x-opt-enqueued-time': 1718535466011}, 'Properties': {}, 'Body': b'{"nobilId": "DAN_20991", "evseUId": "DK*EDR*E11900", "status": "CHARGING", "timestamp": "2024-06-16T10:57:43.162871+00:00", "process_id": "6222ad62-75e2-4792-8264-d9930ab59de4"}'}
+{'SequenceNumber': 6326, 'Offset': '1530480', 'EnqueuedTimeUtc': '6/16/2024 10:57:46 AM', 'SystemProperties': {'x-opt-enqueued-time': 1718535466011}, 'Properties': {}, 'Body': b'{"nobilId": "NOR_07979", "evseUId": "04A71A2D-4A0B-EC11-B6E6-00224882AB04", "status": "CHARGING", "timestamp": "2024-06-16T10:57:43.205425+00:00", "process_id": "6222ad62-75e2-4792-8264-d9930ab59de4"}'}
+{'SequenceNumber': 6327, 'Offset': '1530744', 'EnqueuedTimeUtc': '6/16/2024 10:57:46 AM', 'SystemProperties': {'x-opt-enqueued-time': 1718535466011}, 'Properties': {}, 'Body': b'{"nobilId": "NOR_07893", "evseUId": "18395", "status": "AVAILABLE", "timestamp": "2024-06-16T10:57:43.342848+00:00", "process_id": "6222ad62-75e2-4792-8264-d9930ab59de4"}'}
+{'SequenceNumber': 6328, 'Offset': '1530976', 'EnqueuedTimeUtc': '6/16/2024 10:57:46 AM', 'SystemProperties': {'x-opt-enqueued-time': 1718535466011}, 'Properties': {}, 'Body': b'{"nobilId": "NOR_04446", "evseUId": "0AEC6800-D0D5-E811-A95E-000D3A29BA60", "status": "CHARGING", "timestamp": "2024-06-16T10:57:43.828355+00:00", "process_id": "6222ad62-75e2-4792-8264-d9930ab59de4"}'}
+{'SequenceNumber': 6329, 'Offset': '1531240', 'EnqueuedTimeUtc': '6/16/2024 10:57:46 AM', 'SystemProperties': {'x-opt-enqueued-time': 1718535466011}, 'Properties': {}, 'Body': b'{"nobilId": "NOR_07979", "evseUId": "890E3233-4A0B-EC11-B6E6-00224882AB04", "status": "UNKNOWN", "timestamp": "2024-06-16T10:57:43.864107+00:00", "process_id": "6222ad62-75e2-4792-8264-d9930ab59de4"}'}
+------------------------------------------------------------
+Inspecting Avro file: /root/data/nobil-realtime_datadump/2024/06/16/11/12/45.avro
+Schema fields:
+  - SequenceNumber: long
+  - Offset: string
+  - EnqueuedTimeUtc: string
+  - SystemProperties: {'type': 'map', 'values': ['long', 'double', 'string', 'bytes']}
+  - Properties: {'type': 'map', 'values': ['long', 'double', 'string', 'bytes', 'null']}
+  - Body: ['null', 'bytes']
+Sample records:
+{'SequenceNumber': 9541, 'Offset': '2308096', 'EnqueuedTimeUtc': '6/16/2024 11:12:46 AM', 'SystemProperties': {'x-opt-enqueued-time': 1718536366114}, 'Properties': {}, 'Body': b'{"nobilId": "SWE_27927", "evseUId": "4b428295-f4cf-43a5-2e63-08dc5a39509e", "status": "AVAILABLE", "timestamp": "2024-06-16T11:12:43.172638+00:00", "process_id": "6222ad62-75e2-4792-8264-d9930ab59de4"}'}
+{'SequenceNumber': 9542, 'Offset': '2308360', 'EnqueuedTimeUtc': '6/16/2024 11:12:46 AM', 'SystemProperties': {'x-opt-enqueued-time': 1718536366114}, 'Properties': {}, 'Body': b'{"nobilId": "SWE_23596", "evseUId": "7733", "status": "CHARGING", "timestamp": "2024-06-16T11:12:43.773370+00:00", "process_id": "6222ad62-75e2-4792-8264-d9930ab59de4"}'}
+{'SequenceNumber': 9543, 'Offset': '2308592', 'EnqueuedTimeUtc': '6/16/2024 11:12:46 AM', 'SystemProperties': {'x-opt-enqueued-time': 1718536366114}, 'Properties': {}, 'Body': b'{"nobilId": "NOR_06477", "evseUId": "1862", "status": "CHARGING", "timestamp": "2024-06-16T11:12:44.010439+00:00", "process_id": "6222ad62-75e2-4792-8264-d9930ab59de4"}'}
+{'SequenceNumber': 9544, 'Offset': '2308824', 'EnqueuedTimeUtc': '6/16/2024 11:12:46 AM', 'SystemProperties': {'x-opt-enqueued-time': 1718536366114}, 'Properties': {}, 'Body': b'{"nobilId": "SWE_27202", "evseUId": "21857", "status": "AVAILABLE", "timestamp": "2024-06-16T11:12:44.958280+00:00", "process_id": "6222ad62-75e2-4792-8264-d9930ab59de4"}'}
+{'SequenceNumber': 9545, 'Offset': '2309056', 'EnqueuedTimeUtc': '6/16/2024 11:12:46 AM', 'SystemProperties': {'x-opt-enqueued-time': 1718536366114}, 'Properties': {}, 'Body': b'{"nobilId": "NOR_01452", "evseUId": "4865", "status": "UNKNOWN", "timestamp": "2024-06-16T11:12:45.085849+00:00", "process_id": "6222ad62-75e2-4792-8264-d9930ab59de4"}'}
+------------------------------------------------------------
+Inspecting Avro file: /root/data/nobil-realtime_datadump/2024/06/16/11/27/45.avro
+Schema fields:
+  - SequenceNumber: long
+  - Offset: string
+  - EnqueuedTimeUtc: string
+  - SystemProperties: {'type': 'map', 'values': ['long', 'double', 'string', 'bytes']}
+  - Properties: {'type': 'map', 'values': ['long', 'double', 'string', 'bytes', 'null']}
+  - Body: ['null', 'bytes']
+Sample records:
+{'SequenceNumber': 12528, 'Offset': '3028648', 'EnqueuedTimeUtc': '6/16/2024 11:27:46 AM', 'SystemProperties': {'x-opt-enqueued-time': 1718537266312}, 'Properties': {}, 'Body': b'{"nobilId": "NOR_02651", "evseUId": "F486EFC8-B1B7-EB11-8236-000D3ABEFDCC", "status": "AVAILABLE", "timestamp": "2024-06-16T11:27:43.386014+00:00", "process_id": "6222ad62-75e2-4792-8264-d9930ab59de4"}'}
+{'SequenceNumber': 12529, 'Offset': '3028912', 'EnqueuedTimeUtc': '6/16/2024 11:27:46 AM', 'SystemProperties': {'x-opt-enqueued-time': 1718537266312}, 'Properties': {}, 'Body': b'{"nobilId": "SWE_17727", "evseUId": "19547", "status": "AVAILABLE", "timestamp": "2024-06-16T11:27:43.400468+00:00", "process_id": "6222ad62-75e2-4792-8264-d9930ab59de4"}'}
+{'SequenceNumber': 12530, 'Offset': '3029144', 'EnqueuedTimeUtc': '6/16/2024 11:27:46 AM', 'SystemProperties': {'x-opt-enqueued-time': 1718537266312}, 'Properties': {}, 'Body': b'{"nobilId": "NOR_03763", "evseUId": "5672", "status": "CHARGING", "timestamp": "2024-06-16T11:27:43.622224+00:00", "process_id": "6222ad62-75e2-4792-8264-d9930ab59de4"}'}
+{'SequenceNumber': 12531, 'Offset': '3029376', 'EnqueuedTimeUtc': '6/16/2024 11:27:46 AM', 'SystemProperties': {'x-opt-enqueued-time': 1718537266312}, 'Properties': {}, 'Body': b'{"nobilId": "NOR_13762", "evseUId": "8639", "status": "CHARGING", "timestamp": "2024-06-16T11:27:43.812468+00:00", "process_id": "6222ad62-75e2-4792-8264-d9930ab59de4"}'}
+{'SequenceNumber': 12532, 'Offset': '3029608', 'EnqueuedTimeUtc': '6/16/2024 11:27:46 AM', 'SystemProperties': {'x-opt-enqueued-time': 1718537266312}, 'Properties': {}, 'Body': b'{"nobilId": "NOR_17902", "evseUId": "8490", "status": "CHARGING", "timestamp": "2024-06-16T11:27:44.374560+00:00", "process_id": "6222ad62-75e2-4792-8264-d9930ab59de4"}'}
+------------------------------------------------------------

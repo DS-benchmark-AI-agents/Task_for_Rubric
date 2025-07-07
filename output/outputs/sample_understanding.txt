@@ -1,0 +1,16 @@
+Sample Data Understanding Summary
+Files sampled: 50
+Total records in sample: 114660
+Unique station IDs: 3739
+Unique EVSE IDs: 13229
+Status distribution:
+  AVAILABLE: 54316
+  CHARGING: 32736
+  OUTOFORDER: 12546
+  UNKNOWN: 12239
+  BLOCKED: 2822
+  RESERVED: 1
+Snapshot size statistics (records per file):
+  min: 655.00
+  max: 3737.00
+  mean: 2293.20
