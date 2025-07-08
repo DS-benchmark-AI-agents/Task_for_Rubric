@@ -3,4 +3,5 @@
 #echo "Fetching large artefacts..."
 #wget -q https://example.com/evaluation-data.zip -O /tmp/eval.zip
 #unzip -q /tmp/eval.zip -d ./your-eval-folder/
-pip install jupyterlab-code-runner
+echo "Installing Jupyterlab..."
+pip install jupyterlab
