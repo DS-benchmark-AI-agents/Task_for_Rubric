@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Runs after the image is built but before the session starts
-echo "Fetching large artefacts..."
-wget -q https://example.com/evaluation-data.zip -O /tmp/eval.zip
-unzip -q /tmp/eval.zip -d ./your-eval-folder/
+#echo "Fetching large artefacts..."
+#wget -q https://example.com/evaluation-data.zip -O /tmp/eval.zip
+#unzip -q /tmp/eval.zip -d ./your-eval-folder/
 pip install jupyterlab_code_runner
