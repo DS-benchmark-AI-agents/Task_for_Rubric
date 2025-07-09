@@ -1,0 +1,19 @@
+{
+  // Shows up as the Codespace name in VS Code
+  "name": "agent-eval",
+  // Off-the-shelf Python image maintained by Microsoft
+  "image": "mcr.microsoft.com/devcontainers/python:3.12-bookworm",
+
+  // Pull in requirements.txt that your upload script already copied
+  "postCreateCommand": "conda env create -f environment.yml --name eval && echo 'source activate eval' >> ~/.bashrc",
+
+  // VS Code tweaks (optional)
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python"
+      }
+    }
+  }
+}
+
